@@ -24,19 +24,22 @@
 (setq tab-width 4)
 (setq coffee-tab-width 4)
 
+(global-auto-revert-mode 1)
+
 (setq whitespace-action '(auto-cleanup)) ;; automatically clean up bad whitespace
 (setq whitespace-style '(trailing space-before-tab indentation empty space-after-tab)) ;; only show bad whitespace
 
 ;(set-frame-font "ProggyClean")
-(set-face-attribute 'default nil :height 120)
+
 
 ; setup for scala
 (require 'package)
+(package-initialize)
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(package-initialize)
-(unless (package-installed-p 'scala-mode2)
-  (package-refresh-contents) (package-install 'scala-mode2))
+;(package-initialize)
+;(unless (package-installed-p 'scala-mode2)
+;  (package-refresh-contents) (package-install 'scala-mode2))
 
 ;;(add-hook 'haskell-mode-hook 'turn-on-haskell-font-lock)
 
@@ -45,16 +48,17 @@
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
-(require 'git-gutter)
+(require 'sass-mode)        
+
+;(global-git-gutter+-mode t)
+(require 'git-gutter+)
 ;; If you enable global minor mode
-(global-git-gutter-mode t)
+(global-git-gutter+-mode t)
 
 (global-set-key (kbd "C-c o") 'occur)
 
+(set-face-attribute 'default nil :height 140)
 
-;(global-set-key (kbd "C-x C-f") 'helm-find-files)
-
-(require 'helm-ls-git)
-(global-set-key (kbd "C-x C-g") 'helm-ls-git-ls)
+(add-to-list 'auto-mode-alist '("\\.underscore\\'" . html-mode))
 
 (server-start)
