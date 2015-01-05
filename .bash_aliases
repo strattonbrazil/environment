@@ -1,8 +1,9 @@
 alias emacs='emacs -fg white -bg black'
 alias e='emacsclient -n'
-alias chrome_test='chromium-browser --disable-web-security --allow-file-access-from-files --allow-file-access --enable-file-cookies --user-data-dir=$HOME/.test_profile'
+alias chrome_test='google-chrome --disable-web-security --allow-file-access-from-files --allow-file-access --enable-file-cookies --user-data-dir=$HOME/.test_profile'
 alias chrome_test_proxy='chrome_test --proxy-server=http://localhost:3128'
 alias ws='~/Public/WebStorm-133.434/bin/webstorm.sh'
+alias ack='ack-grep'
 
 alias upload=~/workspace/cube1/core/tools/upload.py
 

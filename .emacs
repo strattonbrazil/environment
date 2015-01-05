@@ -13,6 +13,7 @@
 
 ;disable backup
 (setq backup-inhibited t)
+(setq make-backup-files nil)
 ;disable auto save
 (setq auto-save-default nil)
 ;no tabs
@@ -23,6 +24,7 @@
 
 (setq tab-width 4)
 (setq coffee-tab-width 4)
+(setq sgml-basic-offset 4)
 
 (global-auto-revert-mode 1)
 
@@ -60,5 +62,8 @@
 (set-face-attribute 'default nil :height 140)
 
 (add-to-list 'auto-mode-alist '("\\.underscore\\'" . html-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . sass-mode))
+
+(setq ruby-indent-level 4)
 
 (server-start)
