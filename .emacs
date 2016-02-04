@@ -50,6 +50,8 @@
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
 
+(global-set-key (kbd "C-x f") 'find-file-in-repository)
+
 (require 'sass-mode)        
 
 ;(global-git-gutter+-mode t)
@@ -65,5 +67,10 @@
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . sass-mode))
 
 (setq ruby-indent-level 4)
+
+(add-to-list 'load-path "~/.emacs.d/")
+(load "bright-script.el")
+
+(add-to-list 'auto-mode-alist '("\\.brs\\'" . brightscript-mode))
 
 (server-start)
