@@ -30,4 +30,6 @@ GREEN="\[\033[0;32m\]"
 
 PS1="$RED\$(date +%H:%M) \w$YELLOW \$(parse_git_branch)$GREEN\$ "
 
+PATH=$PATH:~/.local/bin
+
 # keep this here for an EOF line
